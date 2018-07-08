@@ -87,5 +87,5 @@ sitemap:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/liziwl/liziwl.github.io.git
+  repo: git@github.com:liziwl/liziwl.github.io.git
   branch: master

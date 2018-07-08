@@ -1,5 +1,6 @@
 ---
 title: Hello World
+date: 2017-08-01 11:44:52
 categories: 
 - hexo
 ---

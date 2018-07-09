@@ -7,7 +7,7 @@ git:
 
 cache:
     directories:
-        - node_modules    #据说可以减少travis构建时间
+        - node_modules    #据说可以减少Travis构建时间
 
 before_install:
   - export TZ='Asia/Shanghai' # 更改时区
@@ -20,7 +20,6 @@ install:
   - npm install   #安装hexo及插件
 
 before_script:
-  - npm install gulp -g
   - git clone --quiet "https://${GH_TOKEN}@${GH_THEME}" themes/next
 
 script:

@@ -43,23 +43,23 @@ CI是 Continuous Integration 的缩写，持续集成之意。
 特别注意的是，由于主题配置文件`_config.yml`会有敏感信息，所以将其作为私有的子模块处理，clone 需要使用 Github token。
 
 ```yaml
-language: node_js   #设置语言
-node_js: stable     #设置相应的版本
+language: node_js   # 设置语言
+node_js: stable     # 设置相应的版本
 
 git:
   submodules:
     false
 
-cache:
-    directories:
-        - node_modules    #据说可以减少Travis构建时间
+# cache:
+#     directories:
+#         - node_modules    # 据说可以减少Travis构建时间
 
 before_install:
   - export TZ='Asia/Shanghai'   # 更改时区
   - node --version
   - npm --version
   - npm install hexo-cli -g # 安装hexo插件
-  - npm install gulp -g     # 安装静态页面压缩插件
+  # - npm install gulp -g     # 安装静态页面压缩插件
 
 install:
   - npm install   # 安装hexo插件
@@ -70,7 +70,7 @@ before_script:
 script:
   - hexo clean   # 清除
   - hexo g   # 生成
-  - gulp
+  # - gulp
 
 after_script:
   - git clone https://${GH_REF} .deploy_git  # GH_REF是最下面配置的仓库地址
@@ -79,15 +79,15 @@ after_script:
   - cd ../
   - mv .deploy_git/.git/ ./public/   # 这一步之前的操作是为了保留master分支的提交记录，不然每次git init的话只有1条commit
   - cd ./public
-  - git config user.name "liziwl"  #修改name
-  - git config user.email "leezisy@gmail.com"  #修改email
+  - git config user.name "liziwl"  # 修改name
+  - git config user.email "leezisy@gmail.com"  # 修改email
   - git add .
   - git commit -m "Travis-CI Auto Builder at `date +"%Y-%m-%d %H:%M"`"  # 提交记录包含时间 跟上面更改时区配合
-  - git push --quiet "https://${GH_TOKEN}@${GH_REF}" master:master  #GH_TOKEN是在Travis中配置环境变量的名称
+  - git push --quiet "https://${GH_TOKEN}@${GH_REF}" master:master  # GH_TOKEN是在Travis中配置环境变量的名称
 
 branches:
   only:
-    - src  #只监测这个分支，一有动静就开始构建
+    - src  # 只监测这个分支，一有动静就开始构建
 
 env:
     global:
@@ -98,3 +98,7 @@ env:
 ## Push 到 GitHub
 
 在`_posts`目录下新建文章并 `push` 分支，登陆 `Travis CI` 即可发现已经检测到分支变化并开始构建，其中`Job log`记录了构建的过程。
+
+## 坑
+
+目前不清楚原因，Travis 中使用 `gulp` 压缩结果和本地不一样，导致 font-awesome 路径出错，干脆停用了，压缩效果其实一般般，如果不压缩图片的话，只能降低最多5%的空间。

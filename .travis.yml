@@ -5,9 +5,9 @@ git:
   submodules:
     false
 
-cache:
-    directories:
-        - node_modules    # 据说可以减少Travis构建时间
+# cache:
+#     directories:
+#         - node_modules    # 据说可以减少Travis构建时间
 
 before_install:
   - export TZ='Asia/Shanghai'   # 更改时区

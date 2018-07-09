@@ -14,7 +14,7 @@ before_install:
   - node --version
   - npm --version
   - npm install hexo-cli -g # 安装hexo插件
-  - npm install gulp -g     # 安装静态页面压缩插件
+  # - npm install gulp -g     # 安装静态页面压缩插件
 
 install:
   - npm install   # 安装hexo插件
@@ -25,7 +25,7 @@ before_script:
 script:
   - hexo clean   # 清除
   - hexo g   # 生成
-  - gulp
+  # - gulp
 
 after_script:
   - git clone https://${GH_REF} .deploy_git  # GH_REF是最下面配置的仓库地址

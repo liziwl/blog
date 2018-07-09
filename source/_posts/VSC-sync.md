@@ -14,6 +14,8 @@ categories:
 
     https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync
 
+<!-- more -->
+
 ## 设置方式
 1. 在A机器上安装了Settings Sync，并做好了自己常用的插件和设置部署.
 2. 在github上创建能修改gist的token，保存下载，之后要用。token只有第一次有显示。

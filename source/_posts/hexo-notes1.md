@@ -1,11 +1,11 @@
 ---
-title: hexo code block in bullet lists problem
+title: Hexo code block in bullet lists problem
 date: 2018-05-06 09:46:26
 categories:
 - hexo
 ---
 
-# 解决hexo有序列表编号重置问题
+# 解决Hexo有序列表编号重置问题
 参考链接: [link](https://gist.github.com/clintel/1155906/1eec0c2a5b5494c84e77b5298197a7e33477372c)
 
 <!-- more -->

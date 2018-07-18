@@ -6,8 +6,8 @@ categories:
 mathjax: true
 ---
 
-这篇文章的目的在于快速部署 $\LaTeX$ 环境。
-
+快速部署 $\LaTeX$ 环境。
+<!-- more -->
 
 # 安装 TeXLive
 

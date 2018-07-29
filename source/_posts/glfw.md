@@ -48,6 +48,8 @@ unzip glfw-x.x.x.zip
 
 5. 测试运行
 
+    新建文件 `test.c`
+
     ```c
     #include <GLFW/glfw3.h>
 
@@ -88,6 +90,24 @@ unzip glfw-x.x.x.zip
     }
     ```
 
+6. 编译测试
+    
+    * 查看链接命令，每个输出结果连接起来。
+
+    ```bash
+    pkg-config --static --libs glfw3
+    # -L/usr/local/lib -lglfw3 -lrt -lm -ldl -lXrandr -lXinerama -lXxf86vm -lXext -lXcursor -lXrender -lXfixes -lX11 -lpthread -lxcb -lXau -lXdmcp
+    pkg-config --libs gl
+    # -lGL
+    # 另外还需链接：
+    # -lX11 -lm -lrt -ldl
+    ```
+
+    * 组成编译语句
+
+    ```bash
+    gcc -o test test.c -L/usr/local/lib -lglfw3 -lrt -lm -ldl -lXrandr -lXinerama -lXxf86vm -lXext -lXcursor -lXrender -lXfixes -lX11 -lpthread -lxcb -lXau -lXdmcp -lGL -lX11 -lm -lrt -ldl
+    ```
 # 安装 OpenGL
 
 1. 一行全部安装：编译环境, OpenGLLibrary, OpenGLUtilities, OpenGLUtility Toolkit
@@ -138,7 +158,6 @@ unzip glfw-x.x.x.zip
     ./opengl                                    # 之后执行
     ```
 
-
-正常的话能看到一个茶壶。
+* 正常的话能看到一个茶壶。
 
 ![茶壶](/images/opengl_pot.png)

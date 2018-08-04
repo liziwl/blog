@@ -76,5 +76,7 @@ categories:
 
     ```python
     import torch                # 不报错，torch 安装正确
-    torch.cuda.is_available()   # CUDA 和 torch 安装兼容，后面可以使用 GPU 进行学习。
+    torch.cuda.is_available()   
+    # Ture
+    # 返回以上字段，CUDA 和 torch 安装兼容，后面可以使用 GPU 进行学习。
     ```

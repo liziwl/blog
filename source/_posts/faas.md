@@ -5,8 +5,12 @@ categories:
 - 链接
 ---
 
-# FaaS 测试
+# FaaS DEMO页面
 
-图片处理
+**展示页面已下线**
 
 http://self.sustech.pub/faas/simple.html
+
+# 项目仓库
+
+https://github.com/liziwl/faas

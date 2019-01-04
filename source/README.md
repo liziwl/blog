@@ -1,4 +1,4 @@
-# [liziwl的个人博客](https://liziwl.cn/) [![Build Status](https://travis-ci.com/liziwl/liziwl.github.io.svg?branch=src)](https://travis-ci.com/liziwl/liziwl.github.io)
+# [liziwl的个人博客](https://liziwl.com/) [![Build Status](https://travis-ci.com/liziwl/liziwl.github.io.svg?branch=src)](https://travis-ci.com/liziwl/liziwl.github.io)
 基于[hexo](https://hexo.io/)搭建在github上，使用[next](http://theme-next.iissnan.com/)主题优化
 
 # TO-DO

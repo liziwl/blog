@@ -2,8 +2,8 @@
 title: 关于我
 date: 2017-08-04 21:15:09
 ---
-Nickname: [@Arthur Li](https://liziwl.cn)
-Email: [i@liziwl.cn](mailto:i@liziwl.cn) 
+Nickname: [@Arthur Li](https://liziwl.com)
+Email: [i@liziwl.com](mailto:i@liziwl.com) 
 Github: [@liziwl](https://github.com/liziwl/)
 instagram: [@lizi_arthur](https://www.instagram.com/lizi_arthur/)
 

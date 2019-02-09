@@ -1,3 +1,6 @@
 [submodule "themes/next"]
 	path = themes/next
 	url = git@github.com:liziwl/hexo-theme-next-mod.git
+[submodule "source/photos/images"]
+	path = source/photos/images
+	url = git@git.dev.tencent.com:lizi_wl/BlogPhotos.git

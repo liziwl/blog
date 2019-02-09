@@ -20,7 +20,8 @@ install:
   - npm install   # 安装hexo插件
 
 before_script:
-  - git clone --quiet "https://${GH_TOKEN}@${GH_THEME}" themes/next
+  - git clone --quiet "https://${GH_TOKEN}@${GH_THEME}" themes/next/
+  - git clone --quiet "https://${GH_IMG}" source/photos/images/
 
 script:
   - hexo clean   # 清除
@@ -48,3 +49,4 @@ env:
     global:
         - GH_REF: github.com/liziwl/liziwl.github.io.git    # hexo 仓库地址
         - GH_THEME: github.com/liziwl/hexo-theme-next-mod.git   # hexo 主题地址
+        - GH_IMG: git.dev.tencent.com/lizi_wl/BlogPhotos.git   # images 地址

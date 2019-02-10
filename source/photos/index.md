@@ -6,4 +6,4 @@ type: "picture"
 
 转载请注明出处
 
-<div class="ImageGrid"></div>
+<div class="ImageGrid-container"></div>

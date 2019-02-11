@@ -74,72 +74,72 @@ categories:
 4. 主题CSS配置：
    * `themes/next/source/css/_common/components/post/post-expand.styl`
    
-   ```diff
-   +.posts-expand .post-body .ImageGrid-container .ImageGrid .card img { margin: auto; }
-    .posts-expand .post-body .fancybox img { margin: 0 auto 25px; }
-    .posts-expand .post-body img { margin: 0 auto 25px; }
-   ```
+     ```diff
+     +.posts-expand .post-body .ImageGrid-container .ImageGrid .card img { margin: auto; }
+      .posts-expand .post-body .fancybox img { margin: 0 auto 25px; }
+      .posts-expand .post-body img { margin: 0 auto 25px; }
+     ```
    
    * `layout/_scripts/commons.swig` 
    
-   ```diff
-   @@ -1,9 +1,20 @@
-   +{% if page.type ==='picture' %}
-   +{%
-   +  set js_commons = [
-   +    'src/utils.js',
-   +    'src/motion.js',
-   +    'src/minigrid.min.js',
-   +    'src/photo.js',
-   +  ]
-   +%}
-   +{% else %}
-    {%
-      set js_commons = [
-        'src/utils.js',
-        'src/motion.js'
-      ]
-    %}
-   +{% endif %}
-    
-    {% for common in js_commons %}
-      <script type="text/javascript" src="{{ url_for(theme.js) }}/{{ common }}?v={{ theme.version }}"></script>
-   ```
+     ```diff
+     @@ -1,9 +1,20 @@
+     +{% if page.type ==='picture' %}
+     +{%
+     +  set js_commons = [
+     +    'src/utils.js',
+     +    'src/motion.js',
+     +    'src/minigrid.min.js',
+     +    'src/photo.js',
+     +  ]
+     +%}
+     +{% else %}
+      {%
+        set js_commons = [
+          'src/utils.js',
+          'src/motion.js'
+        ]
+      %}
+     +{% endif %}
+      
+      {% for common in js_commons %}
+        <script type="text/javascript" src="{{ url_for(theme.js) }}/{{ common }}?v={{ theme.version }}"></script>
+     ```
    
    * `source/css/_custom/custom.styl`  
    
-   ```diff
-   @@ -1 +1,29 @@
-   // Custom styles.
-   +
-   +// 相册样式
-   +.ImageGrid {
-   +    width: 100%;
-   +    max-width: 1040px;
-   +    margin: 0 auto;
-   +    text-align: center;
-   +}
-   +
-   +.card {
-   +    overflow: hidden;
-   +    transition: .3s ease-in-out;
-   +    border-radius: 8px;
-   +    background-color: #ddd;
-   +}
-   +
-   +.ImageInCard {
-   +}
-   +
-   +.ImageInCard img {
-   +    padding: 0 0 0 0;
-   +}
-   +
-   +.TextInCard {
-   +    line-height: 54px;
-   +    background-color: #ffffff;
-   +    font-size: 24px;
-   +}
-   ```
+     ```diff
+     @@ -1 +1,29 @@
+     // Custom styles.
+     +
+     +// 相册样式
+     +.ImageGrid {
+     +    width: 100%;
+     +    max-width: 1040px;
+     +    margin: 0 auto;
+     +    text-align: center;
+     +}
+     +
+     +.card {
+     +    overflow: hidden;
+     +    transition: .3s ease-in-out;
+     +    border-radius: 8px;
+     +    background-color: #ddd;
+     +}
+     +
+     +.ImageInCard {
+     +}
+     +
+     +.ImageInCard img {
+     +    padding: 0 0 0 0;
+     +}
+     +
+     +.TextInCard {
+     +    line-height: 54px;
+     +    background-color: #ffffff;
+     +    font-size: 24px;
+     +}
+     ```
    
 5. 相册页面静态化时自定义js：`scripts/phototool.js`
 

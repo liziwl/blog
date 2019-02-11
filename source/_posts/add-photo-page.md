@@ -175,7 +175,6 @@ categories:
                            var capture_time = exifData['exif']['DateTimeOriginal'];
                            if (typeof capture_time === 'undefined') {
                                shot_time = stats['mtime'];
-                               // 这里时区有点小问题
                            }
                            else {
                                var tmp = capture_time.split(" ");
@@ -337,6 +336,3 @@ categories:
 
 8. 相册页面展示图片路径：`source/photos/images`
    * 静态化时，即运行 `hexo g` 前在此路径中放入图片
-
-# TOFIX
-1. `scripts/phototool.js` 生成 json 的时候如果直接从 EXIF 中读会有点小问题，把 UTC+0 作为记录时区，然后转换为为本地时区，但是对日期影响不大，相册按月份分类。

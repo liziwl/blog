@@ -19,7 +19,7 @@ fs.readdir(path, function (err, files) {
             if (err) throw err;
 
             if (stats.isFile()) {
-                console.log("%s is file", path_file);
+                // console.log("%s is file", path_file);
                 new ExifImage({ image: path_file }, function (error, exifData) {
                     if (error) {
                         console.log('Error: ' + error.message);
@@ -29,7 +29,6 @@ fs.readdir(path, function (err, files) {
                         var capture_time = exifData['exif']['DateTimeOriginal'];
                         if (typeof capture_time === 'undefined') {
                             shot_time = stats['mtime'];
-                            // 这里时区有点小问题
                         }
                         else {
                             var tmp = capture_time.split(" ");
@@ -39,11 +38,11 @@ fs.readdir(path, function (err, files) {
 
                         var y = shot_time.getFullYear();
                         var m = shot_time.getMonth() + 1;
-                        console.log(typeof shot_time);
-                        console.log(shot_time);
+                        // console.log(typeof shot_time);
+                        // console.log(shot_time);
 
                         var dimensions = sizeOf(path_file);
-                        console.log(dimensions.width, dimensions.height);
+                        // console.log(dimensions.width, dimensions.height);
                         var this_file = {};
                         this_file['w'] = dimensions.width;
                         this_file['h'] = dimensions.height;
@@ -63,7 +62,7 @@ fs.readdir(path, function (err, files) {
                         // console.log(itemsProcessed);
                         // console.log(files.length);
                         if (itemsProcessed === files.length) {
-                            console.log(JSON.stringify(_json_out, null, 2));
+                            // console.log(JSON.stringify(_json_out, null, 2));
                             _json_out['count'] = photo_count;
                             fs.writeFileSync(output, JSON.stringify(_json_out, null, 2));
                         }
@@ -71,14 +70,14 @@ fs.readdir(path, function (err, files) {
                 });
             }
             else if (stats.isDirectory()) {
-                console.log("%s is a directory", file);
+                // console.log("%s is a directory", file);
                 itemsProcessed++;
                 // console.log("***********************");
                 // console.log(JSON.stringify(_json_out, null, 2));
                 // console.log(itemsProcessed);
                 // console.log(files.length);
                 if (itemsProcessed === files.length) {
-                    console.log(JSON.stringify(_json_out, null, 2));
+                    // console.log(JSON.stringify(_json_out, null, 2));
                     _json_out['count'] = photo_count;
                     fs.writeFileSync(output, JSON.stringify(_json_out, null, 2));
                 }

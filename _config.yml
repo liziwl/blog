@@ -89,3 +89,6 @@ deploy:
   type: git
   repo: git@github.com:liziwl/liziwl.github.io.git
   branch: master
+
+aplayer:
+  meting: true

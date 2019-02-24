@@ -26,6 +26,7 @@ before_script:
 script:
   - hexo clean   # 清除
   - hexo g   # 生成
+  - cp ./source/photos/photoslist.json ./public/photos/ # fix a json generation bug
   # - gulp
 
 after_script:

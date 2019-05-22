@@ -3,6 +3,7 @@ title:  Ubuntu 16.04 CUDA 安装
 date: 2018-08-04 15:15:38
 categories:
 - 机器学习
+notshow: true
 ---
 
 # 环境

@@ -3,6 +3,7 @@ title: Ubuntu安装ngrok服务端
 date: 2018-03-05 11:42:12
 categories: 
 - 计算机拾遗
+notshow: true
 ---
 
 如果要有实现内网穿透的功能ngrok是个不错的选择，这篇就讲下如何配置ngrox。

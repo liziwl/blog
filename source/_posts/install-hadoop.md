@@ -3,6 +3,7 @@ title: Ubuntu 16.04 安装 hadoop
 date: 2018-03-16 11:44:52
 categories: 
 - 计算机拾遗
+notshow: true
 ---
 
 Copy line by line and paste to an interactive shell

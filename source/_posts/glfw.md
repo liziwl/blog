@@ -3,6 +3,7 @@ title: Ubuntu 安装 glfw 和 OpenGL
 date: 2018-07-29 11:33:06
 categories: 
 - 计算机拾遗
+notshow: true
 ---
 
 Ubuntu 安装 glfw 和 OpenGL

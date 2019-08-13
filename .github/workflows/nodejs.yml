@@ -1,0 +1,60 @@
+name: Hexo build and publish
+
+on:
+  push:
+    branches:
+    - src
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        version: 10.x
+        
+    - name: Clone Lib
+      run: |
+        git clone --depth 1 --branch src https://${GH_REF} my_build/
+        cd my_build
+        git clone --depth 1 --branch master "https://${MY_KEY}@${GH_THEME}" themes/next/
+        git clone --depth 1 --branch master "https://${GH_IMG}" source/photos/images/
+      env:
+        MY_KEY: ${{ secrets.MY_KEY }}
+        GH_THEME: github.com/liziwl/hexo-theme-next-mod.git
+        GH_IMG: git.dev.tencent.com/lizi_wl/BlogPhotos.git
+        GH_REF: github.com/liziwl/liziwl.github.io.git
+        
+    - name: npm install and setup env
+      run: |
+        cd my_build
+        npm install hexo-cli -g # 安装hexo插件
+        npm install
+
+    - name: Hexo build
+      run: |
+        cd my_build
+        hexo clean
+        hexo generate
+        cp ./source/photos/photoslist.json ./public/photos/
+
+    - name: Publish
+      run: |
+        cd my_build
+        git clone --depth 1 --branch master https://${GH_REF} .deploy_git/
+        mv .deploy_git/.git/ ./public/   # 这一步之前的操作是为了保留master分支的提交记录，不然每次git init的话只有1条commit
+        cd ./public
+        git config user.name "liziwl"  # 修改name
+        git config user.email $EMAIL  # 修改email
+        export TZ='Asia/Shanghai'
+        git add .
+        git commit -m "GitHub-CI Auto Builder at `date +"%Y-%m-%d %H:%M"`"  # 提交记录包含时间 跟上面更改时区配合
+        git push --quiet "https://${MY_KEY}@${GH_REF}" master:master
+      env:
+        MY_KEY: ${{ secrets.MY_KEY }}
+        EMAIL: ${{ secrets.EMAIL }}
+        GH_REF: github.com/liziwl/liziwl.github.io.git

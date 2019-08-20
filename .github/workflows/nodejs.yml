@@ -1,4 +1,4 @@
-name: Hexo build and publish
+name: Hexo-make
 
 on:
   push:

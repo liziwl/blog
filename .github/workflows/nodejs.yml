@@ -15,16 +15,17 @@ jobs:
     - name: Use Node.js 10.x
       uses: actions/setup-node@v1
       with:
-        version: 10.x
+        node-version: 10.x
         
     - name: Clone Lib
       run: |
         git clone --depth 1 --branch src https://${GH_REF} my_build/
         cd my_build
         git clone --depth 1 --branch master "https://${MY_KEY}@${GH_THEME}" themes/next/
-        git clone --depth 1 --branch master "https://${GH_IMG}" source/photos/images/
+        git clone --depth 1 --branch master "https://${CO_TOKEN}@${GH_IMG}" source/photos/images/
       env:
         MY_KEY: ${{ secrets.MY_KEY }}
+        CO_TOKEN: ${{ secrets.CO_TOKEN }}
         GH_THEME: github.com/liziwl/hexo-theme-next-mod.git
         GH_IMG: e.coding.net/liziwl/BlogPhotos.git
         GH_REF: github.com/liziwl/liziwl.github.io.git

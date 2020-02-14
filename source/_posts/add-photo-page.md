@@ -279,8 +279,8 @@ categories:
                                li += '<div class="card" style="width:380px">' +
                                    '<div class="ImageInCard" style="height:' + 380 * imageH / imageW + 'px">' +
                                    //href 和 src 的链接地址是相册照片外部链接，也可以放博客目录里
-                                   '<a data-fancybox="gallery" href="https://dev.tencent.com/u/lizi_wl/p/BlogPhotos/git/raw/master/' + imgNameWithPattern + '" data-caption="' + imgName + '">' +
-                                   '<img src="https://dev.tencent.com/u/lizi_wl/p/BlogPhotos/git/raw/master/' + imgNameWithPattern + '"/>' +
+                                   '<a data-fancybox="gallery" href="https://liziwl.coding.net/p/BlogPhotos/d/BlogPhotos/git/raw/master/' + imgNameWithPattern + '" data-caption="' + imgName + '">' +
+                                   '<img src="https://liziwl.coding.net/p/BlogPhotos/d/BlogPhotos/git/raw/master/' + imgNameWithPattern + '"/>' +
                                    '</a>' +
                                    '</div>' +
                                    // '<div class="TextInCard">' + imgName + '</div>' +  //图片下显示文件名作为说明的功能

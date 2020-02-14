@@ -26,7 +26,7 @@ jobs:
       env:
         MY_KEY: ${{ secrets.MY_KEY }}
         GH_THEME: github.com/liziwl/hexo-theme-next-mod.git
-        GH_IMG: git.dev.tencent.com/lizi_wl/BlogPhotos.git
+        GH_IMG: e.coding.net/liziwl/BlogPhotos.git
         GH_REF: github.com/liziwl/liziwl.github.io.git
         
     - name: npm install and setup env

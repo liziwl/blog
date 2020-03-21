@@ -9,8 +9,6 @@ categories:
 
 今年选的BGM是易烊千玺的《精彩才刚刚开始》。
 
-未完待续
-
 {% meting "001apXAh2mHRub" "tencent" "song" %}
 
 <!-- more -->
@@ -20,7 +18,7 @@ categories:
 # 冬
 期末完没多久，既然尘埃落定、决定要继续在本校（南方科技大学）读硕士研究生，我便终止了在英伟达的实习。回学校专心搞毕业设计，毕竟，大四上（2018秋季学期）半工半读有点力不从心。毕设刚开了题，实验都还没做多少，得抓紧了。
 
-![图片](/images/2019-final-1.png)
+<div align=center><img src="/images/2019-final-1.png" style="max-width:50%" /></div>
 
 期末考完，1月15至20日去重庆玩了5天，这里应该是差一篇重庆游记，这坑看有时间能不能填上。重庆值得玩几次，吃喝性价比高，玩得也不错。去之前建议回顾《疯狂的石头》、《少年的你》、《火锅英雄》、还有一些在重庆取景的民国到抗战时期的的电影，这样去游玩更有感觉。留有遗憾的是，这次去没去 “817核工程” 因为主要太偏僻了，可能要自驾去。
 
@@ -31,7 +29,7 @@ categories:
 
 最后一学期我还参加了广东省大学生游泳比赛，这是我本科最后一次参加省比赛。其实决定是否参加还是挺纠结的，毕竟毕业设计的优先级更高，不能得不偿失，游泳比赛的排期和毕业设计最终答辩离得比较近，考虑了好久，也算安排上了。
 
-![图片](/images/2019-final-2.png)
+<div align=center><img src="/images/2019-final-2.png" style="max-width:50%" /></div>
 
 # 夏
 暑假安排了去日本旅游，旅游的细节可以看[公众号-鲤池塘 的推送](https://mp.weixin.qq.com/s/mdAhhyxBzPabFJUQKO2rUw)，也可以看[博客](https://liziwl.cn/2019/07/10/travelogue-JAPAN/)发布的，两边稍有区别。之后回校做毕业设计的完善工作，投到了 [ICSE](https://2020.icse-conferences.org/details/icse-2020-papers/60/Collaborative-Bug-Finding-for-Android-Apps)，最后中了，之后可以去韩国，简直开心。

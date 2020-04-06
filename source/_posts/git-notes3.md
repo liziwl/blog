@@ -39,7 +39,7 @@ Host github.com
   Hostname github.com
   IdentityFile "C:\Users\YOUR_NAME\.ssh\id_ed25519"
   TCPKeepAlive yes
-  ProxyCommand "C:\Program Files\Git\mingw64\bin\connect.exe" -S 127.0.0.1:1080 -a none %h %p
+  ProxyCommand "C:\Program Files\Git\mingw64\bin\connect.exe" -S 127.0.0.1:1080 %h %p
 
 Host ssh.github.com
   User git
@@ -47,7 +47,7 @@ Host ssh.github.com
   Hostname ssh.github.com
   IdentityFile "C:\Users\YOUR_NAME\.ssh\id_ed25519"
   TCPKeepAlive yes
-  ProxyCommand "C:\Program Files\Git\mingw64\bin\connect.exe" -S 127.0.0.1:1080 -a none %h %p
+  ProxyCommand "C:\Program Files\Git\mingw64\bin\connect.exe" -S 127.0.0.1:1080 %h %p
 ```
 
 `IdentityFile` 就是你的 SSH 私钥文件名

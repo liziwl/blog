@@ -7,3 +7,6 @@ type: "picture"
 转载请注明出处
 
 <div class="ImageGrid-container"></div>
+<script src="/js/minigrid.min.js"></script>
+<script src="/js/photo.js"></script>
+<link href="/css/photo.css" rel="stylesheet">

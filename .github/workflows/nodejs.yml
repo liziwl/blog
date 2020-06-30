@@ -41,7 +41,6 @@ jobs:
         cd my_build
         hexo clean
         hexo generate
-        cp ./source/photos/photoslist.json ./public/photos/
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3

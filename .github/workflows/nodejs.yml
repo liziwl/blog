@@ -48,3 +48,4 @@ jobs:
         personal_token: ${{ secrets.MY_KEY }}
         publish_dir: ./my_build/public
         publish_branch: gh-pages  # default: gh-pages
+        force_orphan: true # only remain last commit

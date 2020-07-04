@@ -19,7 +19,20 @@ fs.readdir(path, function (err, files) {
             if (err) throw err;
 
             var thub_flag = (path_file.indexOf("thumbnail") != -1);
-            if (stats.isFile() && thub_flag) {
+            if (stats.isDirectory() || thub_flag) {
+                // console.log("%s is a directory", file);
+                itemsProcessed++;
+                // console.log("***********************");
+                // console.log(JSON.stringify(_json_out, null, 2));
+                // console.log(itemsProcessed);
+                // console.log(files.length);
+                if (itemsProcessed === files.length) {
+                    // console.log(JSON.stringify(_json_out, null, 2));
+                    _json_out['count'] = photo_count;
+                    fs.writeFileSync(output, JSON.stringify(_json_out, null, 2));
+                }
+            }
+            else if (stats.isFile()) {
                 // console.log("%s is file", path_file);
                 new ExifImage({ image: path_file }, function (error, exifData) {
                     if (error) {
@@ -69,19 +82,6 @@ fs.readdir(path, function (err, files) {
                         }
                     }
                 });
-            }
-            else if (stats.isDirectory()) {
-                // console.log("%s is a directory", file);
-                itemsProcessed++;
-                // console.log("***********************");
-                // console.log(JSON.stringify(_json_out, null, 2));
-                // console.log(itemsProcessed);
-                // console.log(files.length);
-                if (itemsProcessed === files.length) {
-                    // console.log(JSON.stringify(_json_out, null, 2));
-                    _json_out['count'] = photo_count;
-                    fs.writeFileSync(output, JSON.stringify(_json_out, null, 2));
-                }
             }
         });
     });

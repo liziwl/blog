@@ -18,7 +18,8 @@ fs.readdir(path, function (err, files) {
         fs.stat(path_file, function (err, stats) {
             if (err) throw err;
 
-            if (stats.isFile()) {
+            thub_flag = path_file.indexOf("thumbnail") != -1;
+            if (stats.isFile() && thub_flag) {
                 // console.log("%s is file", path_file);
                 new ExifImage({ image: path_file }, function (error, exifData) {
                     if (error) {

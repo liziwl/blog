@@ -37,6 +37,12 @@ fs.readdir(path, function (err, files) {
                 new ExifImage({ image: path_file }, function (error, exifData) {
                     if (error) {
                         console.log('Error: ' + error.message);
+                        itemsProcessed++;
+                        if (itemsProcessed === files.length) {
+                            // console.log(JSON.stringify(_json_out, null, 2));
+                            _json_out['count'] = photo_count;
+                            fs.writeFileSync(output, JSON.stringify(_json_out, null, 2));
+                        }
                     }
                     else {
                         var shot_time = "";

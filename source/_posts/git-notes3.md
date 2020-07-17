@@ -9,7 +9,7 @@ categories:
 
 <!-- more -->
 
-## Http 的代理设置
+## http 的代理设置 Windows & Unix
 
 1080 为 代理服务器 (127.0.0.1) 的端口。
 
@@ -28,6 +28,8 @@ git config --global --unset https.proxy
 ```
 
 ## SSH 的代理设置
+
+### Windows
 
 1. 进入自己的用户目录 `C:\Users\YOUR_NAME\.ssh`
 2. 新建或者打开文件 `config`
@@ -52,4 +54,30 @@ Host ssh.github.com
 
 `IdentityFile` 就是你的 SSH 私钥文件名
 
-`ProxyCommand` 是代理命令，后面是 Git 自带的 `connect` 注意路径和实际一致。 `-S` 意味着 使用 sock 协议代理，如果使用 http 协议代理使用 `-H` 参数。
+`ProxyCommand` 是代理命令，后面是 Git 自带的 `connect` 注意路径和实际一致。 `-S` 参数意味着 使用 sock 协议代理，如果使用 http 协议代理使用 `-H` 参数。
+
+
+### Unix
+
+稍有不同，因为我用的是 Manjaro 没有自带 netcat 也就是 nc。特别注意这里使用的是 **OpenBSD** 的 netcat，不是 GNU 的 netcat。
+
+```
+Host github.com
+    User git
+    Port 22
+    Hostname github.com
+    IdentityFile "/home/YOUR_NAME/.ssh/id_ed25519"
+    TCPKeepAlive yes
+    ProxyCommand nc -X connect -x 127.0.0.1:7890 %h %p  # HTTP proxy
+    ProxyCommand nc -x 127.0.0.1:7891 %h %p  # sock proxy
+
+
+Host ssh.github.com
+    User git
+    Port 443
+    Hostname ssh.github.com
+    IdentityFile "/home/YOUR_NAME/.ssh/id_ed25519"
+    TCPKeepAlive yes
+    ProxyCommand nc -X connect -x 127.0.0.1:7890 %h %p  # HTTP proxy
+    ProxyCommand nc -x 127.0.0.1:7891 %h %p  # sock proxy
+```

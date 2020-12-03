@@ -13,7 +13,7 @@ categories:
 
 <!-- more -->
 
-[2018年Final总结](https://liziwl.cn/2018/12/24/2018-final/)回顾了到2019春节前的故事，那2019年的总结理应从2019春节前讲起。
+[2018年Final总结](https://blog.liziwl.cn/2018/12/24/2018-final/)回顾了到2019春节前的故事，那2019年的总结理应从2019春节前讲起。
 
 # 冬
 期末完没多久，既然尘埃落定、决定要继续在本校（南方科技大学）读硕士研究生，我便终止了在英伟达的实习。回学校专心搞毕业设计，毕竟，大四上（2018秋季学期）半工半读有点力不从心。毕设刚开了题，实验都还没做多少，得抓紧了。
@@ -32,7 +32,7 @@ categories:
 <div align=center><img src="/images/2019-final-2.png" style="max-width:50%" /></div>
 
 # 夏
-暑假安排了去日本旅游，旅游的细节可以看[公众号-鲤池塘 的推送](https://mp.weixin.qq.com/s/mdAhhyxBzPabFJUQKO2rUw)，也可以看[博客](https://liziwl.cn/2019/07/10/travelogue-JAPAN/)发布的，两边稍有区别。之后回校做毕业设计的完善工作，投到了 [ICSE](https://2020.icse-conferences.org/details/icse-2020-papers/60/Collaborative-Bug-Finding-for-Android-Apps)，最后中了，之后可以去韩国，简直开心。
+暑假安排了去日本旅游，旅游的细节可以看[公众号-鲤池塘 的推送](https://mp.weixin.qq.com/s/mdAhhyxBzPabFJUQKO2rUw)，也可以看[博客](https://blog.liziwl.cn/2019/07/10/travelogue-JAPAN/)发布的，两边稍有区别。之后回校做毕业设计的完善工作，投到了 [ICSE](https://2020.icse-conferences.org/details/icse-2020-papers/60/Collaborative-Bug-Finding-for-Android-Apps)，最后中了，之后可以去韩国，简直开心。
 
 借着参加同期举办的软件测试比赛，暑期还去了北京参加 ISSTA，今年 ISSTA 升为CCF-A类会议。在北京意外的是，我表哥刚好在北京出差，竟然在同一个酒店，事先并没有联系，实在是缘分。他带我参观了字节跳动的北京总部。还有一天去和拜访隔壁班的孙力，他在 MSRA 实习，同样在中关村旁边。
 

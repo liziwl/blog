@@ -12,9 +12,9 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://www.liziwl.cn   # with the https protocol
-enforce_ssl: www.liziwl.cn   # without any protocol
-root: /blog/
+url: https://blog.liziwl.cn   # with the https protocol
+enforce_ssl: blog.liziwl.cn   # without any protocol
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 

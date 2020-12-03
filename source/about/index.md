@@ -4,7 +4,7 @@ date: 2017-08-04 21:15:09
 ---
 
 Email: leezisy__at__gmail.com
-个人主页: https://liziwl.cn
+个人主页: https://blog.liziwl.cn
 Github: [@liziwl](https://github.com/liziwl/)
 Instagram: [@lizi_arthur](https://www.instagram.com/lizi_arthur/)
 

@@ -1,4 +1,4 @@
-# [liziwl的个人博客](https://liziwl.cn/)
+# [liziwl的个人博客](https://blog.liziwl.cn/)
 [![](https://github.com/liziwl/liziwl.github.io/workflows/Hexo-make/badge.svg)](https://github.com/liziwl/liziwl.github.io/actions)
 
 基于[hexo](https://hexo.io/)搭建在github上，使用[next](http://theme-next.iissnan.com/)主题优化

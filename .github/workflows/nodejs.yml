@@ -50,4 +50,14 @@ jobs:
         publish_dir: ./my_build/public
         publish_branch: gh-pages  # default: gh-pages
         force_orphan: true # only remain last commit
-        cname: blog.liziwl.cn
+        # cname: blog.liziwl.cn
+
+    - name: setup aliyun oss
+      uses: manyuanrong/setup-ossutil@master
+      with:
+        endpoint: oss-accelerate.aliyuncs.com
+        access-key-id: ${{ secrets.OSS_KEY_ID }}
+        access-key-secret: ${{ secrets.OSS_KEY_SECRET }}
+
+    - name: cp files to aliyun
+      run: ossutil cp -rf ./my_build/public oss://liziwl-blog/

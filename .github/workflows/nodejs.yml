@@ -17,6 +17,12 @@ jobs:
       with:
         node-version: 10.x
 
+    - name: Use Python3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+        architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+
     - name: Clone Lib
       run: |
         git clone --depth 1 --branch master https://${GH_REF} my_build/
@@ -35,6 +41,7 @@ jobs:
         cd my_build
         npm install hexo-cli -g # 安装hexo插件
         npm install
+        pip install -r requirements.txt
 
     - name: Hexo build
       run: |

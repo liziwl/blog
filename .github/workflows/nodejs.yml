@@ -48,7 +48,8 @@ jobs:
         hexo clean
         hexo generate
         cp ./source/photos/photoslist.json ./public/photos/
-
+      # fix JSON format
+    
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:

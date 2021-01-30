@@ -59,12 +59,31 @@ jobs:
         force_orphan: true # only remain last commit
         # cname: blog.liziwl.cn
 
-    - name: setup aliyun oss
-      uses: manyuanrong/setup-ossutil@master
-      with:
-        endpoint: oss-accelerate.aliyuncs.com
-        access-key-id: ${{ secrets.OSS_KEY_ID }}
-        access-key-secret: ${{ secrets.OSS_KEY_SECRET }}
+    # - name: setup aliyun oss
+    #   uses: manyuanrong/setup-ossutil@master
+    #   with:
+    #     endpoint: oss-accelerate.aliyuncs.com
+    #     access-key-id: ${{ secrets.OSS_KEY_ID }}
+    #     access-key-secret: ${{ secrets.OSS_KEY_SECRET }}
 
-    - name: cp files to aliyun
-      run: ossutil cp -rf ./my_build/public oss://liziwl-blog/
+    # - name: cp files to aliyun
+    #   run: ossutil cp -rf ./my_build/public oss://liziwl-blog/
+
+    - name: Deploy to coding
+      run: |
+        cd my_build
+        sha=$(git rev-parse --short HEAD)
+        mkdir -p /tmp/liziwl_page_push
+        cp -r ./public/* /tmp/liziwl_page_push
+        cd /tmp/liziwl_page_push
+        git init
+        git config user.name "liziwl"
+        git config user.email "leezisy@gmail.com"
+        git remote add origin "https://${CODING_USER}:${CODING_PERSONAL_TOKEN}@${CODING_URL}"
+        git add .
+        git commit -m "Deploy ${sha}"
+        git push -u -f origin master
+      env:
+        CODING_USER: ${{ secrets.CODING_USER }}
+        CODING_PERSONAL_TOKEN: ${{ secrets.CODING_PERSONAL_TOKEN }}
+        CODING_URL: "e.coding.net/liziwl/liziwl-page/blog-page.git"
